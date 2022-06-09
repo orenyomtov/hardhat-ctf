@@ -8,6 +8,15 @@ This is a framework to implement a solidity CTF challenge.
 
 Check the [example](/example) folder for a sample challenge built using this plugin.
 
+This plugin can be helpful when you:
+1. Don't want the flag to be available in the contract source code / bytecode.
+2. Want people to solve it in a competitive CTF environment where they get points for flags.
+3. Don't want people to be able to cheat by querying the RPC node for other people's transactions.
+4. Want to deploy the RPC server in a scalable stateless way in order to mitigate porential DDOS attacks.
+5. Want to provide a clean execution environment each time trying to solve the challenge (can be important when dealing with nonces or deploying contracts to specific addresses).
+
+It achieves it by creating a temporary Hardhat Network for each websocket connection, initializing the challenge contracts, and allows the challenge author to hook into the RPC responses in order to inject the flag without it being on-chain.
+
 ## Installation
 
 
@@ -36,8 +45,6 @@ Once you solved it locally, you can run the `ctf-try` task with the `--submit` f
 
 ## Configuration
 
-<_A description of each extension to the HardhatConfig or to its fields_>
-
 This plugin extends the `HardhatUserConfig` object with
 `ctfResponseHook` and `ctfRemoteNode` fields.
 
@@ -50,7 +57,7 @@ import { JsonRpcResponse, SuccessfulJsonRpcResponse } from "hardhat/internal/uti
 
 const config: HardhatUserConfig = {
   solidity: "0.8.4",
-  ctfRemoteNode: "ws://localhost:8545",
+  ctfRemoteNode: "ws://ctf.example.com:8545",
   ctfResponseHook: async (provider: EthereumProvider, rpcReq: JsonRpcRequest, rpcResp: JsonRpcResponse) => {
     if (
       rpcReq.method === "eth_call"
