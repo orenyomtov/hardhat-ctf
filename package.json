@@ -1,0 +1,55 @@
+{
+  "name": "hardhat-ctf",
+  "version": "0.0.3",
+  "description": "Hardhat plugin for building solidity capture the flag (CTF) challenges.",
+  "repository": "github:orenyomtov/hardhat-ctf",
+  "author": "Oren Yomtov",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "ethereum",
+    "smart-contracts",
+    "hardhat",
+    "hardhat-plugin",
+    "ctf"
+  ],
+  "scripts": {
+    "lint:fix": "prettier --write 'src/**/*.{js,ts}' 'test/**/*.{js,ts}' && tslint --fix --config tslint.json --project tsconfig.json",
+    "lint": "tslint --config tslint.json --project tsconfig.json",
+    "test": "mocha --exit --recursive 'test/**/*.test.ts'",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist/",
+    "src/",
+    "LICENSE",
+    "README.md"
+  ],
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.6",
+    "@types/chai": "^4.3.1",
+    "@types/fs-extra": "^5.0.4",
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^8.10.38",
+    "chai": "^4.3.6",
+    "hardhat": "^2.9.6",
+    "mocha": "^10.0.0",
+    "prettier": "2.0.5",
+    "ts-node": "^10.8.1",
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^4.7.3"
+  },
+  "peerDependencies": {
+    "hardhat": "^2.9.6"
+  },
+  "dependencies": {
+    "@types/ws": "^8.5.3",
+    "ethers": "^5.6.8"
+  }
+}
