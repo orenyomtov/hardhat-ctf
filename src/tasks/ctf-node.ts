@@ -4,6 +4,7 @@ import fsExtra from "fs-extra";
 
 import { CTFWebsocketServer, CTFWebsocketServerConfig } from "../ctf-server";
 import { TASK_CTF_NODE } from "./task-names";
+import { TASK_COMPILE } from "hardhat/builtin-tasks/task-names";
 
 task(TASK_CTF_NODE, "Starts CTF websocket server")
   .addOptionalParam(
@@ -27,8 +28,9 @@ task(TASK_CTF_NODE, "Starts CTF websocket server")
         hostname?: string;
         port: number;
       },
-      { hardhatArguments, network, config  }
+      { hardhatArguments, network, config, run }
     ) => {
+      await run(TASK_COMPILE, { quiet: true });
       // we throw if the user specified a network argument and it's not hardhat
       if (
         network.name !== HARDHAT_NETWORK_NAME &&

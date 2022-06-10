@@ -14,7 +14,7 @@ Make sure everything was properly installed
 npx hardhat test
 ```
 
-Try to solve the challenge by editing [/challenge/index.tx](./challenge/index.ts) and running
+Try to solve the challenge by editing [/challenge/index.ts](./challenge/index.ts) and running
 
 ```bash
 npx hardhat ctf-try
