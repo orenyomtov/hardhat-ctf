@@ -12,7 +12,9 @@ describe("Challenge Setup", function () {
   });
 });
 
-// Try to solve the challenge here
+// Try to solve the challenge below this line
+// Run `npx hardhat ctf-try` to test your solution locally
+// Run `npx hardhat ctf-try --submit` to submit your solution to the remote CTF node and get the real flag
 describe("Solve Challenge", function () {
   it("Should return the winning flag", async function () {
     const mockCtfChallenge: MockCtfChallenge = await ethers.getContractAt("MockCtfChallenge", "0x5fbdb2315678afecb367f032d93f642f64180aa3");
