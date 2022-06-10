@@ -27,7 +27,7 @@ npm install hardhat-ctf
 Import the plugin in your `hardhat.config.js`:
 
 ```js
-require("<hardhat-ctf");
+require("hardhat-ctf");
 ```
 
 Or if you are using TypeScript, in your `hardhat.config.ts`:
