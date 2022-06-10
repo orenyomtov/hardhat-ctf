@@ -48,6 +48,8 @@ Once you solved it locally, you can run the `ctf-try` task with the `--submit` f
 This plugin extends the `HardhatUserConfig` object with
 `ctfResponseHook` and `ctfRemoteNode` fields.
 
+The `ctfResponseHook` field is only relevant for the `npx hardhat ctf-node` task, while the `ctfRemoteNode` is only relevant for the `npx hardhat ctf-try --submit` task.
+
 This is an example of how to set it:
 
 ```ts
