@@ -1,6 +1,6 @@
 {
   "name": "hardhat-ctf",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Hardhat plugin for building solidity capture the flag (CTF) challenges.",
   "repository": "github:orenyomtov/hardhat-ctf",
   "author": "Oren Yomtov",
