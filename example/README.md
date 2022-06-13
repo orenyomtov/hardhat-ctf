@@ -11,6 +11,7 @@ npm install
 Make sure everything was properly installed
 
 ```bash
+npx hardhat compile
 npx hardhat test
 ```
 
